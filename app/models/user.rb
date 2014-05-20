@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_many :artists
   has_many :albums 
   has_many :comments
-  attr_accessible :created_at, :email, :name, :role, :updated_at, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation
 end
