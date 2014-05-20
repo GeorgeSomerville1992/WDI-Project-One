@@ -20,9 +20,10 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'rspec-rails'
-  gem 'carrierwave', "0.9.0"
-  gem 'bcrypt-ruby', '~> 3.0.0'
 end
+
+gem 'carrierwave', "0.9.0"
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development do
   gem 'better_errors' # BetterErrors.editor = :sublime if defined? BetterErrors  (initializer)
