@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @song.name %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @song.file %>
+</p>
+
+<p>
+  <b>Date created:</b>
+  <%= @song.date_created %>
+</p>
+
+<p>
+  <b>Date modifed:</b>
+  <%= @song.date_modifed %>
+</p>
+
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
