@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div id="profile">
+<p>
+  <b>Bio:</b>
+  <%= @profile.bio %>
+</p>
+
+<p>
+  <b>Avatar:</b>
+  <%= @profile.avatar %>
+</p>
+
+<p>
+  <b>History:</b>
+  <%= @profile.history %>
+</p>
+
+<p>
+  <b>Background:</b>
+  <%= @profile.background %>
+</p>
+</div>
+
+<% current_user.songs.each do |song| %>
+  <tr>
+    <td><%= song.name %></td>
+    <td><audio autoplay="autoplay" controls="controls" src="<%= song.file.url %>"/> <!-- song. file extension --> 
+    </td>
+    <td><%= song.date_created %></td>
+    <td><%= song.date_modifed %></td>
+    <td><%= link_to 'Show', song %></td>
+
+    <% if can? :edit, Song %>
+          <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    <% end %>
+    
+    <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
+
   def index
     @songs = Song.all
 
@@ -35,13 +36,14 @@ class SongsController < ApplicationController
   # GET /songs/1/edit
   def edit
     @song = Song.find(params[:id])
+     authorize! :edit, @song 
   end
 
   # POST /songs
   # POST /songs.json
   def create
     
-    @song = Song.new(params[:song])
+    @song = current_user.songs.new(params[:song])
 
     respond_to do |format|
       if @song.save
@@ -58,7 +60,7 @@ class SongsController < ApplicationController
   # PUT /songs/1.json
   def update
     @song = Song.find(params[:id])
-
+    authorize! :update, @song 
     respond_to do |format|
       if @song.update_attributes(params[:song])
         format.html { redirect_to @song, notice: 'Song was successfully updated.' }
@@ -75,7 +77,7 @@ class SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
-
+    authorize! :destroy, @song 
     respond_to do |format|
       format.html { redirect_to songs_url }
       format.json { head :no_content }

@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
 
-    respond_to do |format|
+    respond_to do |format| #unsure of what the problem is - same with songs to view
       format.html # index.html.erb
       format.json { render json: @artists }
     end

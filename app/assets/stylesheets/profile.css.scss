@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'trenchfree';
+  src: url('app/assets/fonts/nimavisual_trench/trenchfree.otf') format('opentype'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */ /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+html, body {
+  width:100%;
+  height:100%;
+  font-family: 'Exo 2', sans-serif;
+}
+
+ a:visited, a:link, a:active {
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color:silver;
+
+}
+.clearfix {
+  clear:both;
+
+}
+.inner {
+  width:1300px;
+  height:100%;
+  margin:0 auto;
+  background: black;
+}
+.container_div {
+  width:700px; 
+  height:300px;
+  margin:0 auto;
+  margin-top: 100px;
+  background-color:black;
+  border:solid 2px silver;
+  color:white;
+}
+.coloumns_container {
+  height: 100%;
+
+
+}
+.top_login_nav {
+  height:30px;
+  width:100%;
+  background-color:white;
+  color:black ;
+}
+
+.top_login_nav li {
+  text-align:center;
+  text-transform: capitalize;
+  padding:2px;
+
+}
+.left_profile_coloum {
+  height:150px;
+  width:30%;
+  float:left;
+  text-align: center;
+}
+.right_current_user_song_coloumn {
+  height:100%;
+  width:70%;
+  float:right;
+ 
+  
+}
+
+
+
+.songs_table {
+  border:solid 2px white;
+  
+
+}
+
+.songs_table,td,th {
+    width:80%;
+    
+
+}
+.songs_table th{
+  background-color:#8C8B8B; 
+
+}
+
+.left_profile_coloum p {
+  padding:10px;
+
+
+}
+#underline p{
+  text-decoration: underline;
+
+}
+.bottomnav {
+  height:30px;
+  width:100%;
+}
+.bottomnav ul {
+ 
+  text-align:center;
+  margin-top: 5px;
+}
+.bottomnav ul li {
+  display:inline;
+  padding: 2px;
+  background-color:white;
+  border-radius: 20px; 
+  margin-left: 5px;
+  text-transform: capitalize;
+}
+.link input{
+  text-decoration:none  
+
+}
+.link input:hover{ /*needs fixing */
+background: silver;
+}
+
+
+
+footer {
+  width:100%;
+  height:150px;
+  background-color:#8C8B8B; 
+}

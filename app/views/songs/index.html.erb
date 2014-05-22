@@ -1,29 +1,36 @@
 <h1>Listing songs</h1>
 
-<table>
+<table class="songs_table">
   <tr>
     <th>Name</th>
     <th>File</th>
     <th>Date created</th>
     <th>Date modifed</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3">action</th>
   </tr>
-
 <% @songs.each do |song| %>
   <tr>
     <td><%= song.name %></td>
-    <td><audio autoplay="autoplay" controls="controls" src="<%= "#{@upload}"%>"> 
-      <%= song.file %>
-    </td></audio>
+    <td><audio controls="controls" src="<%= song.file.url %>"/> <!-- song. file extension --> 
+    </td>
     <td><%= song.date_created %></td>
     <td><%= song.date_modifed %></td>
-    <td><%= link_to 'Show', song %></td>
-    <td><%= link_to 'Edit', edit_song_path(song) %></td>
-    <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% if can? :show, Song %>
+       <td><%= link_to 'Show', song %> </td>
+    <% end %> 
+    <!-- unless user role = admin -->
+    <% if can? :edit, Song %>
+      <td><%= link_to 'Edit', edit_song_path(song) %> </td> 
+    <% end %>
+    <!-- end -->
+    
+    <% if can? :destroy, Song %>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %> 
   </tr>
 <% end %>
+
 </table>
 
 <br />

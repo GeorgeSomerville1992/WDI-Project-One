@@ -6,7 +6,7 @@
     <th>Artwork</th>
     <th>Date created</th>
     <th>Date updated</th>
-    <th></th>
+    <th colspan="3">Action</th>
     <th></th>
     <th></th>
   </tr>
@@ -14,12 +14,16 @@
 <% @albums.each do |album| %>
   <tr>
     <td><%= album.name %></td>
-    <td><%= album.artwork %></td>
+    <td><img src="<%= album.file.url %>" width="100px" height="100px"</td>
     <td><%= album.date_created %></td>
     <td><%= album.date_updated %></td>
     <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :edit, Album %>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+    <% end %> 
+    <% if can? :destroy, Album %>
+         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

@@ -24,6 +24,7 @@ end
 
 gem 'carrierwave', "0.9.0"
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 
 group :development do
   gem 'better_errors' # BetterErrors.editor = :sublime if defined? BetterErrors  (initializer)

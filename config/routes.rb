@@ -1,12 +1,16 @@
 WDIProjectOne::Application.routes.draw do
 
+  resources :profiles
+
+  get "/profile/edit", to: "profiles#edit"
+
   get "sessions/new"
 
   get "sessions/create"
 
   get "sessions/destroy"
 
-  root to: "users#index"
+  root to: "homes#index"
 
   get "/signup", to: "users#new",        as: "signup"
   get "/login",  to: "sessions#new",     as: "login"
@@ -22,10 +26,12 @@ WDIProjectOne::Application.routes.draw do
   resources :albums
 
 
-  resources :songs
+  resources :songs do 
+    resources :comments, only: :create
+  end 
 
 
-  resources :comments
+    
 
 
   resources :users

@@ -1,0 +1,14 @@
+
+<%= link_to('songs', songs_path) %>
+<%= link_to('albums', albums_path) %>
+<%= link_to('artists', artists_path) %>
+
+
+  <% if current_user %>
+      logged in as <%= current_user.name %>,
+      <%= link_to 'Logout', logout_path, method: :delete %>
+  <% else %>
+      <%= link_to "Login", login_path %>
+      or
+      <%= link_to "Sign up", signup_path %>
+  <% end %>

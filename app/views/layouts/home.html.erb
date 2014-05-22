@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WDIProjectOne</title>
+  <%= stylesheet_link_tag "css_reset", :media => "all" %>
+  <%= stylesheet_link_tag    "home_layout", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="inner">
+    <div class="banner_head"> 
+
+
+    </div>
+   <div id="coloumnone" class="columns">
+     <h1> we make music  </h1> 
+        <ul>
+          <li>
+            <% if current_user %>
+                logged in as <%= current_user.name %>,
+                <%= link_to 'Logout', logout_path, method: :delete %>
+            <% else %>
+                <%= link_to "Login", login_path %>
+                or
+                <%= link_to "Sign up", signup_path %>
+            <% end %>
+          </li>
+        </ul>
+
+    
+   </div>
+   <div id="coloumntwo"class="columns">
+     <h1> we press vinyl </h1>
+
+     <div id="adone" class="advertisements">
+        <img src="app/stylesheets/sample.fw.png" class="advertisment_image"/>
+        <h3> addone </h3>
+        <ul>
+          <li>
+            <%= link_to('albums', albums_path) %>
+          </li>
+        </ul>
+     </div> 
+
+   </div>
+   <div id="coloumnthree"class="columns">
+     <h1> and  </h1>
+      <div id="adone" class="advertisements">
+        <img src="app/stylesheets/sample.fw.png" class="advertisment_image"/>
+        <h3> addone </h3>
+
+      </div> 
+   </div>
+
+   <div id="coloumnfour" class="columns">
+     <h1> we listen to it  </h1>
+
+      <div id="adone" class="advertisements">
+        <img src="app/stylesheets/sample.fw.png" class="advertisment_image"/>
+        <ul>
+        
+      </ul>
+     </div> 
+   </div>
+   <div id="coloumnfive" class="columns">
+     <h1> on mp3 </h1>
+
+      <div id="adone" class="advertisements">
+        <img src="app/stylesheets/sample.fw.png" class="advertisment_image"/>
+        <h3> addone </h3>
+        <ul>
+          <li>
+            <%= link_to('songs', songs_path) %>
+          </li>
+        </ul>
+     </div> 
+   </div>
+
+ </div> <!-- inner -->
+ <script type="text/javascript" src="assets/javascripts/picture.js" ></script>
+</body>
+</html>

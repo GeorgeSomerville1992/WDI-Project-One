@@ -1,3 +1,72 @@
 // Place all the styles related to the songs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: black;
+
+}
+
+.inner {
+  width:1300px;
+  height:100%;
+  margin:0 auto;
+  background: black;
+  text-align: center;
+}
+.container_div {
+  width:700px; 
+  margin:0 auto;
+  margin-top: 100px;
+  background-color:black;
+  border:solid 2px silver;
+  color:white;
+}
+
+
+.songs_table {
+margin:0 auto;
+
+
+}
+
+.container_div a:hover,{
+  text-decoration: none;
+  color: silver;
+
+}
+
+.top_login_nav {
+  height:30px;
+  width:100%;
+}
+.top_login_nav li {
+  text-align:center;
+  text-transform: capitalize;
+  padding:2px;
+
+}
+
+.bottomnav {
+  height:30px;
+  width:100%;
+}
+.bottomnav ul {
+ 
+  text-align:center;
+  margin-top: 5px;
+}
+.bottomnav ul li {
+  display:inline;
+  padding: 2px;
+  background-color:white;
+  border-radius: 20px; 
+  margin-left: 5px;
+}
+.songs_table a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: white;
+}
+.bottomnav a {
+  color: black;
+  text-transform: capitalize;
+}

@@ -1,0 +1,223 @@
+Last login: Tue May 20 10:31:47 on ttys002
+➜  ~  cd development
+➜  development  cd WDI_Project_One
+➜  WDI_Project_One git:(master) ✗ ll
+total 64
+-rw-r--r--   1 User  staff   701B 20 May 13:37 Gemfile
+-rw-r--r--   1 User  staff   4.1K 20 May 13:38 Gemfile.lock
+-rw-r--r--   1 User  staff   9.0K 19 May 14:01 README.rdoc
+-rw-r--r--   1 User  staff   278B 19 May 14:01 Rakefile
+drwxr-xr-x   9 User  staff   306B 19 May 16:39 app
+drwxr-xr-x  10 User  staff   340B 19 May 14:01 config
+-rw-r--r--   1 User  staff   163B 19 May 14:01 config.ru
+drwxr-xr-x   5 User  staff   170B 19 May 14:28 db
+drwxr-xr-x   3 User  staff   102B 19 May 14:01 doc
+drwxr-xr-x   4 User  staff   136B 19 May 14:01 lib
+drwxr-xr-x   4 User  staff   136B 19 May 14:19 log
+drwxr-xr-x   8 User  staff   272B 20 May 11:46 public
+drwxr-xr-x   3 User  staff   102B 19 May 14:01 script
+drwxr-xr-x   8 User  staff   272B 19 May 14:19 spec
+drwxr-xr-x   8 User  staff   272B 19 May 14:01 test
+drwxr-xr-x   7 User  staff   238B 19 May 15:59 tmp
+drwxr-xr-x   4 User  staff   136B 19 May 14:01 vendor
+➜  WDI_Project_One git:(master) ✗ rake routes
+        profiles GET    /profiles(.:format)          profiles#index
+                 POST   /profiles(.:format)          profiles#create
+     new_profile GET    /profiles/new(.:format)      profiles#new
+    edit_profile GET    /profiles/:id/edit(.:format) profiles#edit
+         profile GET    /profiles/:id(.:format)      profiles#show
+                 PUT    /profiles/:id(.:format)      profiles#update
+                 DELETE /profiles/:id(.:format)      profiles#destroy
+    sessions_new GET    /sessions/new(.:format)      sessions#new
+ sessions_create GET    /sessions/create(.:format)   sessions#create
+sessions_destroy GET    /sessions/destroy(.:format)  sessions#destroy
+            root        /                            homes#index
+          signup GET    /signup(.:format)            users#new
+           login GET    /login(.:format)             sessions#new
+          logout DELETE /logout(.:format)            sessions#destroy
+        sessions POST   /sessions(.:format)          sessions#create
+     new_session GET    /sessions/new(.:format)      sessions#new
+         session DELETE /sessions/:id(.:format)      sessions#destroy
+         artists GET    /artists(.:format)           artists#index
+                 POST   /artists(.:format)           artists#create
+      new_artist GET    /artists/new(.:format)       artists#new
+     edit_artist GET    /artists/:id/edit(.:format)  artists#edit
+          artist GET    /artists/:id(.:format)       artists#show
+                 PUT    /artists/:id(.:format)       artists#update
+                 DELETE /artists/:id(.:format)       artists#destroy
+          albums GET    /albums(.:format)            albums#index
+                 POST   /albums(.:format)            albums#create
+       new_album GET    /albums/new(.:format)        albums#new
+      edit_album GET    /albums/:id/edit(.:format)   albums#edit
+           album GET    /albums/:id(.:format)        albums#show
+                 PUT    /albums/:id(.:format)        albums#update
+                 DELETE /albums/:id(.:format)        albums#destroy
+           songs GET    /songs(.:format)             songs#index
+                 POST   /songs(.:format)             songs#create
+        new_song GET    /songs/new(.:format)         songs#new
+       edit_song GET    /songs/:id/edit(.:format)    songs#edit
+            song GET    /songs/:id(.:format)         songs#show
+                 PUT    /songs/:id(.:format)         songs#update
+                 DELETE /songs/:id(.:format)         songs#destroy
+        comments GET    /comments(.:format)          comments#index
+                 POST   /comments(.:format)          comments#create
+     new_comment GET    /comments/new(.:format)      comments#new
+    edit_comment GET    /comments/:id/edit(.:format) comments#edit
+         comment GET    /comments/:id(.:format)      comments#show
+                 PUT    /comments/:id(.:format)      comments#update
+                 DELETE /comments/:id(.:format)      comments#destroy
+           users GET    /users(.:format)             users#index
+                 POST   /users(.:format)             users#create
+        new_user GET    /users/new(.:format)         users#new
+       edit_user GET    /users/:id/edit(.:format)    users#edit
+            user GET    /users/:id(.:format)         users#show
+                 PUT    /users/:id(.:format)         users#update
+                 DELETE /users/:id(.:format)         users#destroy
+➜  WDI_Project_One git:(master) ✗ rake routes
+   edit_profiles GET    /profiles/edit(.:format)     profiles#edit
+        profiles GET    /profiles(.:format)          profiles#index
+                 POST   /profiles(.:format)          profiles#create
+     new_profile GET    /profiles/new(.:format)      profiles#new
+    edit_profile GET    /profiles/:id/edit(.:format) profiles#edit
+         profile GET    /profiles/:id(.:format)      profiles#show
+                 PUT    /profiles/:id(.:format)      profiles#update
+                 DELETE /profiles/:id(.:format)      profiles#destroy
+    sessions_new GET    /sessions/new(.:format)      sessions#new
+ sessions_create GET    /sessions/create(.:format)   sessions#create
+sessions_destroy GET    /sessions/destroy(.:format)  sessions#destroy
+            root        /                            homes#index
+          signup GET    /signup(.:format)            users#new
+           login GET    /login(.:format)             sessions#new
+          logout DELETE /logout(.:format)            sessions#destroy
+        sessions POST   /sessions(.:format)          sessions#create
+     new_session GET    /sessions/new(.:format)      sessions#new
+         session DELETE /sessions/:id(.:format)      sessions#destroy
+         artists GET    /artists(.:format)           artists#index
+                 POST   /artists(.:format)           artists#create
+      new_artist GET    /artists/new(.:format)       artists#new
+     edit_artist GET    /artists/:id/edit(.:format)  artists#edit
+          artist GET    /artists/:id(.:format)       artists#show
+                 PUT    /artists/:id(.:format)       artists#update
+                 DELETE /artists/:id(.:format)       artists#destroy
+          albums GET    /albums(.:format)            albums#index
+                 POST   /albums(.:format)            albums#create
+       new_album GET    /albums/new(.:format)        albums#new
+      edit_album GET    /albums/:id/edit(.:format)   albums#edit
+           album GET    /albums/:id(.:format)        albums#show
+                 PUT    /albums/:id(.:format)        albums#update
+                 DELETE /albums/:id(.:format)        albums#destroy
+           songs GET    /songs(.:format)             songs#index
+                 POST   /songs(.:format)             songs#create
+        new_song GET    /songs/new(.:format)         songs#new
+       edit_song GET    /songs/:id/edit(.:format)    songs#edit
+            song GET    /songs/:id(.:format)         songs#show
+                 PUT    /songs/:id(.:format)         songs#update
+                 DELETE /songs/:id(.:format)         songs#destroy
+        comments GET    /comments(.:format)          comments#index
+                 POST   /comments(.:format)          comments#create
+     new_comment GET    /comments/new(.:format)      comments#new
+    edit_comment GET    /comments/:id/edit(.:format) comments#edit
+         comment GET    /comments/:id(.:format)      comments#show
+                 PUT    /comments/:id(.:format)      comments#update
+                 DELETE /comments/:id(.:format)      comments#destroy
+           users GET    /users(.:format)             users#index
+                 POST   /users(.:format)             users#create
+        new_user GET    /users/new(.:format)         users#new
+       edit_user GET    /users/:id/edit(.:format)    users#edit
+            user GET    /users/:id(.:format)         users#show
+                 PUT    /users/:id(.:format)         users#update
+                 DELETE /users/:id(.:format)         users#destroy
+➜  WDI_Project_One git:(master) ✗ rake routes
+        profiles GET    /profiles(.:format)          profiles#index
+                 POST   /profiles(.:format)          profiles#create
+     new_profile GET    /profiles/new(.:format)      profiles#new
+    edit_profile GET    /profiles/:id/edit(.:format) profiles#edit
+         profile GET    /profiles/:id(.:format)      profiles#show
+                 PUT    /profiles/:id(.:format)      profiles#update
+                 DELETE /profiles/:id(.:format)      profiles#destroy
+    profile_edit GET    /profile/edit(.:format)      profile#edit
+    sessions_new GET    /sessions/new(.:format)      sessions#new
+ sessions_create GET    /sessions/create(.:format)   sessions#create
+sessions_destroy GET    /sessions/destroy(.:format)  sessions#destroy
+            root        /                            homes#index
+          signup GET    /signup(.:format)            users#new
+           login GET    /login(.:format)             sessions#new
+          logout DELETE /logout(.:format)            sessions#destroy
+        sessions POST   /sessions(.:format)          sessions#create
+     new_session GET    /sessions/new(.:format)      sessions#new
+         session DELETE /sessions/:id(.:format)      sessions#destroy
+         artists GET    /artists(.:format)           artists#index
+                 POST   /artists(.:format)           artists#create
+      new_artist GET    /artists/new(.:format)       artists#new
+     edit_artist GET    /artists/:id/edit(.:format)  artists#edit
+          artist GET    /artists/:id(.:format)       artists#show
+                 PUT    /artists/:id(.:format)       artists#update
+                 DELETE /artists/:id(.:format)       artists#destroy
+          albums GET    /albums(.:format)            albums#index
+                 POST   /albums(.:format)            albums#create
+       new_album GET    /albums/new(.:format)        albums#new
+      edit_album GET    /albums/:id/edit(.:format)   albums#edit
+           album GET    /albums/:id(.:format)        albums#show
+                 PUT    /albums/:id(.:format)        albums#update
+                 DELETE /albums/:id(.:format)        albums#destroy
+           songs GET    /songs(.:format)             songs#index
+                 POST   /songs(.:format)             songs#create
+        new_song GET    /songs/new(.:format)         songs#new
+       edit_song GET    /songs/:id/edit(.:format)    songs#edit
+            song GET    /songs/:id(.:format)         songs#show
+                 PUT    /songs/:id(.:format)         songs#update
+                 DELETE /songs/:id(.:format)         songs#destroy
+        comments GET    /comments(.:format)          comments#index
+                 POST   /comments(.:format)          comments#create
+     new_comment GET    /comments/new(.:format)      comments#new
+    edit_comment GET    /comments/:id/edit(.:format) comments#edit
+         comment GET    /comments/:id(.:format)      comments#show
+                 PUT    /comments/:id(.:format)      comments#update
+                 DELETE /comments/:id(.:format)      comments#destroy
+           users GET    /users(.:format)             users#index
+                 POST   /users(.:format)             users#create
+        new_user GET    /users/new(.:format)         users#new
+       edit_user GET    /users/:id/edit(.:format)    users#edit
+            user GET    /users/:id(.:format)         users#show
+                 PUT    /users/:id(.:format)         users#update
+                 DELETE /users/:id(.:format)         users#destroy
+➜  WDI_Project_One git:(master) ✗ 
+➜  WDI_Project_One git:(master) ✗ rails c
+Loading development environment (Rails 3.2.17)
+
+Frame number: 0/3
+[1] pry(main)> User.all
+  User Load (1.0ms)  SELECT "users".* FROM "users" 
+=> [#<User id: 6, name: "George", email: "georges@ascotlawyers.co.uk", role: "admin", created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$hqh7DlSY.ZyH6bETnvgFq.f88Yi24QeIJi4Stfwz5nnp...">,
+ #<User id: 7, name: "Test_user", email: "test@email.co.uk", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$OVN6LO2h5bGC/BBRr/0L2OV9d9OFLMTAQUBaOn5FAgUO...">,
+ #<User id: 8, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$Cp9KDgkyKZ9GptfpMkyKxe1roEx53.sGZvlhR6dd/uIW...">,
+ #<User id: 9, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$VR6K4BNkznOi6fvWrexoSu8Zzuv/pjGLYqpdSsyL3Afi...">,
+ #<User id: 10, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$y3Km6SeSu6b5g5W.gUFwHeccJQ0y3ywRg7La1y5YBtgW...">,
+ #<User id: 11, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$VF0XweOd7CuqfwBC5fWUr.avmBOlrJv7TQvT4VQQ7q6v...">,
+ #<User id: 12, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$fqHDtjPn668aC9velQbJQuI46A9nWLpkRMlsYPx4PDbm...">,
+ #<User id: 13, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$niOzc6caJeEuVaoHMtjXD.UzmP7X.HEBzAB3tqOu4K21...">,
+ #<User id: 14, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$IDyuLYX8hX/H5802X9mD8OYJ2YHGraIVTivkeNu07V6k...">,
+ #<User id: 15, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$6o7knaeaTw6M9hJ/rzjW7u0rKzNqP0pcJ1s.yD9SMElw...">,
+ #<User id: 16, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$Dfhz2C5T4PgZqIk8KkgjCuYOr7aIx9OSUjfDn6d9f3/X...">,
+ #<User id: 17, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$DUj0nfLN8fOgZ1lYtIKF8eA6rJRYXhCaENpm3fah3I3r...">,
+ #<User id: 18, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$p/x.sZk.Jxt.523shiNII.g/.dG.fij5Ucqcj1imZD1....">,
+ #<User id: 19, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$KxQJ/27LTICY8nU.CuxgdO/A419DQwHK1NHTOqwMMmBv...">,
+ #<User id: 20, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$ngAC.amNo55VD5jVKFfau.GY3GMm46JVNYw0arCVllQC...">,
+ #<User id: 21, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$sbo8NiVn782o/4IEV7D/.e4TaN.48QZGMOhqxzzLBKy2...">,
+ #<User id: 22, name: "test_user2", email: "test_user2", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$jcULBlPzn3l08YMkeMgtMO95/Y4Yyb0V4bopY0CoBDF6...">,
+ #<User id: 23, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$kfHxddKV.WlAa.S8RsNzHuKZN04FISDGwMqTJPiHB7YP...">,
+ #<User id: 24, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$Nx11U13PejaNj/Hw4gm8Lu6oe18A7I5IDkJHu.B8L9D7...">,
+ #<User id: 25, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$fEie7aZYeJu3Az96LsItFuTn3sA7xtKO3Kx8EHvpZwhe...">,
+ #<User id: 26, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$fNYbtiOquiU/GJZYUkXICeCVQVdkfAWA5MdliLIicmRF...">,
+ #<User id: 27, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$5d92XuMF0LGcb9g3wqTOJesIciPyg.67aV4oykzJy2xc...">,
+ #<User id: 28, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$eR5bkgsnHaQ6P849O4CCWOfTDQmhnUMIWpIZu/GuSqLN...">,
+ #<User id: 29, name: "ntest_3", email: "test", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$3DxUyTDdMCNYWxNO1fO8julN0TT6BtbfiOD8eIV6Cq.w...">,
+ #<User id: 31, name: "anyone", email: "anyone", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$lGeUUF8gA2fsejbf3REfKOU6ffz2b26ywcDEKDLRY8UX...">,
+ #<User id: 32, name: "boom", email: "boom@boom", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$wOYEseWw5CDnH1VZmv45uuihETG21z89PHVasU5LUxsw...">,
+ #<User id: 33, name: "boom", email: "boom@boom", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$fHryGdHztPeyEdyYS4pm../nlZZQzu.fLekmfdCXE/qX...">,
+ #<User id: 34, name: "george", email: "george", role: nil, created_at: "2014-05-20", updated_at: "2014-05-20", password_digest: "$2a$10$4sO0LYtAPlBwCgvG/Pcnc.5Q.Mh1tcJ8lwEgVJgtP6kT...">]
+[2] pry(main)> Profile.all
+  Profile Load (0.7ms)  SELECT "profiles".* FROM "profiles" 
+=> [#<Profile id: 1, bio: nil, avatar: nil, history: nil, background: nil, created_at: "2014-05-20 15:59:32", updated_at: "2014-05-20 15:59:32", avatar_file: nil, user_id: 33>,
+ #<Profile id: 2, bio: "hacker", avatar: "", history: "", background: "", created_at: "2014-05-20 16:00:01", updated_at: "2014-05-20 16:00:37", avatar_file: nil, user_id: 34>]
+[3] pry(main)> 

@@ -35,13 +35,14 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    authorize! :edit, @album
   end
 
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(params[:album])
-
+    @album = current_user.albums.new(params[:album])
+    authorize! :create, @album
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -57,7 +58,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1.json
   def update
     @album = Album.find(params[:id])
-
+    authorize! :update, @album
     respond_to do |format|
       if @album.update_attributes(params[:album])
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
@@ -73,8 +74,9 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.json
   def destroy
     @album = Album.find(params[:id])
+    authorize! :destroy, @album
     @album.destroy
-
+     
     respond_to do |format|
       format.html { redirect_to albums_url }
       format.json { head :no_content }

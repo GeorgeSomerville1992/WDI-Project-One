@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="song_container">
 <p>
   <b>Name:</b>
   <%= @song.name %>
@@ -20,6 +20,17 @@
   <%= @song.date_modifed %>
 </p>
 
+<% @song.comments.each do |comment| %>
+  <p> <%= comment.body %> </p>
+  <p> <%= time_ago_in_words comment.created_at %> ago</p> 
+<% end %>
+
+<%= form_for [@song, @song.comments.new] do |f| %>
+  <p><%= f.text_area :body, :size => '40x10' %></p> 
+  <p><%= f.submit "Post Comment" %>
+<% end %>
+
+</div> 
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

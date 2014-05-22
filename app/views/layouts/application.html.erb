@@ -8,35 +8,53 @@
 <head>
   <title>WDIProjectOne</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <nav class="navbar">
-    <ul class="left-nav">
-      <li>
-        <%= link_to('songs', songs_path) %>
-      </li>
-      <li>
-        <%= link_to('albums', albums_path) %>
-      </li>
-    </ul>
-    <ul class="right-nav">
-      <li>
-        <% if current_user %>
-          logged in as <%= current_user.name %>,
-          <%= link_to 'Logout', logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Login", login_path %>
-          or
-          <%= link_to "Sign up", signup_path %>
-        <% end %>
-      </li>
-    </ul>
-    <div class="clear"></div>
-  </nav>
+<body class="autumn">
+  <div class="inner">
+      <div class="container_div">
+        <div class="top_login_nav">
+                <ul>
+                  <li>
+                    <% if current_user %>
+                      logged in as <%= current_user.name %>,
+                      <%= link_to 'Logout', logout_path, method: :delete %>
+                    <% else %>
+                      <%= link_to "Login", login_path %>
+                      or
+                      <%= link_to "Sign up", signup_path %>
+                    <% end %>
+                  </li>
+                </ul>
+                <div class="clear"></div>
+            </div> <!-- top_login_nav -->
+          <nav class="bottomnav">
+            <ul>
+              <li>
+                <%= link_to('songs', songs_path) %>
+              </li>
+              <li>
+                <%= link_to('albums', albums_path) %>
+              </li>
+          <!-- pass in the current user variable as arguemtn profile id --> 
+              <li>              
+               <% if current_user %>
+                <%= link_to('profile', profile_path(current_user.profile)) %>
+               <% end %>
+              </li> 
+              <li>
+                <%= link_to('home', root_path) %>
+              </li> 
+            </ul> <!-- bottomnav --> 
+          </nav> <!--bottomnac -->
+            
 
-<%= yield %>
-
-</body>
+          
+        <%= yield %>
+        </div><!-- container div -->
+      </div> <!-- end of  inner --> 
+    </body>
 </html>

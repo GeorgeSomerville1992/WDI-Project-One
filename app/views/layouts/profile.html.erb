@@ -1,0 +1,124 @@
+<% flash.each do |name, message| %>
+   <div class="flash-message flash-message-<%= name %>">
+       <%= message %>
+   </div>
+<% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WDIProjectOne</title>
+  <%= stylesheet_link_tag "css_reset", :media => "all" %>
+  <%= stylesheet_link_tag    "profile", :media => "all" %>
+  <% if current_user and current_user.profile.theme.present? %>
+    <%= stylesheet_link_tag "themes/#{current_user.profile.theme}", :media => "all" %>
+  <% end %>
+  <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="inner">
+  <div class="container_div"> 
+    <div class="top_login_nav">
+      <ul>
+        <li>
+          <% if current_user %>
+            logged in as <%= current_user.name %>,
+            <%= link_to 'Logout', logout_path, method: :delete %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+            or
+            <%= link_to "Sign up", signup_path %>
+          <% end %>
+        </li>
+      </ul>
+      <div class="clear"></div>
+      </div> <!--top_login_nav --> 
+  <div class="coloumns_container">  
+     <div class="left_profile_coloum">
+
+      <p>
+          
+        <img src="<%= @profile.file.url %>" width="100px" height="100px"
+      </p>
+      <div id="underline">
+        <p>
+          Bio:
+          <%= @profile.bio %>
+        </p>
+      </div>    
+      <p>
+        History:
+        <%= @profile.history %>
+      </p>
+
+      <p>
+          Background:
+        <%= @profile.background %>
+      </p>
+
+
+
+  </div>
+  <div class="right_current_user_song_coloumn"> 
+    
+    <table class="songs_table" >
+     <tr>
+        <th>number</th>
+        <th>song</th> 
+        <th>action</th>
+     </tr> 
+    <tr>
+      <% current_user.songs.each do |song| %>
+      <td><%= song.name %></td>
+      <td><audio controls="controls" src="<%= song.file.url %>"/> <!-- song. file extension --> 
+        </td>
+      <td>  
+        <%= link_to 'Show', song %>
+        <%= link_to 'Edit', edit_song_path(song) %>
+        <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+    <% current_user.albums.each do |album| %>
+    <tr> 
+      <th>albumname</th>
+      <th>artwork</th>
+      <th>action</th>
+    </tr>
+      <td><%= album.name %></td>
+      <td><%= album.artwork %></td>
+      <td>
+        <%= link_to 'Show', album %>
+        <%= link_to 'Edit', edit_album_path(album) %>
+        <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+    </table> <!--songs table -->  
+       </div> <!--right_current_user_song_coloumn -->
+            <div class="clearfix"> </div>
+       </div> <!--"coloumns_container" -->
+        <nav class="bottomnav">
+          <ul>
+            <li>
+              <%= link_to('songs', songs_path) %>
+            </li>
+            <li>
+              <%= link_to('albums', albums_path) %>
+            </li>
+            <li>              <!-- pass in the current user variable as arguemtn profile id --> 
+             <%= link_to('profile', profile_path(current_user.profile)) %>
+            </li> 
+            <li>
+              <%= link_to('home' , root_path) %>
+            </li>
+          </ul>
+        </nav>
+      </div> 
+   </div><!-- inner div -->  
+   <footer>
+    
+   </footer>
+
+</body> 
