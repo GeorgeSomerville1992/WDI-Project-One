@@ -7,7 +7,7 @@
 
 <p>
   <b>File:</b>
-  <%= @song.file %>
+  <audio controls="controls" src="<%= @song.file.url %>"/>
 </p>
 
 <p>
@@ -19,6 +19,7 @@
   <b>Date modifed:</b>
   <%= @song.date_modifed %>
 </p>
+
 
 <% @song.comments.each do |comment| %>
   <p> <%= comment.body %> </p>

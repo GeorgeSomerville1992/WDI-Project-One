@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
-  layout "profile"
+   
+  #layout "profile"
   def index
     @profiles = Profile.all
 
@@ -35,9 +36,7 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profile/edit
-  def edit
-    @profile = current_user.profile
-  end
+ 
 
   # POST /profiles
   # POST /profiles.json
@@ -53,6 +52,10 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
+     @profile = current_user.profile
   end
 
   # PUT /profiles/1

@@ -26,7 +26,7 @@ class SongsController < ApplicationController
   # GET /songs/new.json
   def new
     @song = Song.new
-
+    authorize! :new, @song
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @song }
@@ -44,7 +44,7 @@ class SongsController < ApplicationController
   def create
     
     @song = current_user.songs.new(params[:song])
-
+    authorize! :new, @song
     respond_to do |format|
       if @song.save
         format.html { redirect_to @song, notice: 'Song was successfully created.' }
