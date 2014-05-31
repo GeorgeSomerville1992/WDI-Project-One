@@ -27,7 +27,9 @@
 
   </div>
   <div class="right_current_user_song_coloumn"> 
-    
+    <h2> View songs </h2> <button id="showSongs">showSongs</button>
+    <h2> View albums </h2> <button id="showAlbums">showAlbums</button>
+    <div id="albumDropdown">
     <table class="songs_table" >
      <tr>
         <th>number</th>
@@ -46,23 +48,25 @@
       </td>
     </tr>
     <% end %>
-    <% current_user.albums.each do |album| %>
-    <tr> 
-      <th>albumname</th>
-      <th>artwork</th>
-      <th>action</th>
-    </tr>
-      <td><%= album.name %></td>
-      <td><img src="<%= album.file.url %>" width="100px" height="70px"/></td>
+    
+      <% current_user.albums.each do |album| %>
+      <tr> 
+        <th>albumname</th>
+        <th>artwork</th>
+        <th>action</th>
+      </tr>
+        <td><%= album.name %></td>
+        <td><img src="<%= album.file.url %>" width="100px" height="70px"/></td>
 
-      <td>
-        <%= link_to 'Show', album %>
-        <%= link_to 'Edit', edit_album_path(album) %>
-        <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-    <% end %>
+        <td>
+          <%= link_to 'Show', album %>
+          <%= link_to 'Edit', edit_album_path(album) %>
+          <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+      <% end %>
     </table> <!--songs table -->  
+    </div><!--album show -->
        </div> <!--right_current_user_song_coloumn -->
             <div class="clearfix"> </div>
             <%= link_to 'Edit', edit_profile_path(@profile) %> |
