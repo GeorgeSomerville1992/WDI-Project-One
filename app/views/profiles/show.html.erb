@@ -22,51 +22,68 @@
           Background:
         <%= @profile.background %>
       </p>
+      <div class="themeForm">
+        <label for="chooseTheme">Choose Theme</label>
+        <select id="theme">
+            <option >Red</option>
+            <option id="blue">Blue</option>
+            <option id="green">Green</option>
+            <option id="purple">Purple</option>
+            <option id="yellow">Yellow</option>
+        </select>
+      </div>
 
+      <button id="red"> change red </button> 
 
 
   </div>
-  <div class="right_current_user_song_coloumn"> 
-    <h2> View songs </h2> <button id="showSongs">showSongs</button>
-    <h2> View albums </h2> <button id="showAlbums">showAlbums</button>
-    <div id="albumDropdown">
-    <table class="songs_table" >
-     <tr>
-        <th>number</th>
-        <th>song</th> 
-        <th>action</th>
-     </tr> 
-    <tr>
-      <% current_user.songs.each do |song| %>
-      <td><%= song.name %></td>
-      <td><audio controls="controls" src="<%= song.file.url %>"/> <!-- song. file extension --> 
-        </td>
-      <td>  
-        <%= link_to 'Show', song %>
-        <%= link_to 'Edit', edit_song_path(song) %>
-        <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-    <% end %>
-    
-      <% current_user.albums.each do |album| %>
-      <tr> 
-        <th>albumname</th>
-        <th>artwork</th>
-        <th>action</th>
-      </tr>
-        <td><%= album.name %></td>
-        <td><img src="<%= album.file.url %>" width="100px" height="70px"/></td>
-
-        <td>
-          <%= link_to 'Show', album %>
-          <%= link_to 'Edit', edit_album_path(album) %>
-          <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="right_current_user_song_coloumn">
+    <div class = "tableControlContainer">
+      <ul>  
+        <li class="tableControl"> View songs </li> <li><button id="showSongs" class="tableControl">showSongs</button></li>
+        <li class="tableControl"> View albums </li> <li><button id="showAlbums" class="tableControl">showAlbums</button></li>
+      </ul>
+    </div>
+      <table class="songs_table" >
+       <tr>
+          <th>number</th>
+          <th>song</th> 
+          <th>action</th>
+       </tr> 
+      <tr id="songDropdown">
+        <% current_user.songs.each do |song| %>
+        <td><%= song.name %></td>
+        <td><audio controls="controls" src="<%= song.file.url %>"/> <!-- song. file extension --> 
+          </td>
+        <td>  
+          <%= link_to 'Show', song %>
+          <%= link_to 'Edit', edit_song_path(song) %>
+          <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
       <% end %>
-    </table> <!--songs table -->  
-    </div><!--album show -->
+      
+        <% current_user.albums.each do |album| %>
+       <div >
+        <tr> 
+          <th>albumname</th>
+          <th>artwork</th>
+          <th>action</th>
+        </tr>
+        <tr id="albumDropdown">
+          <td><%= album.name %></td>
+          <td><img src="<%= album.file.url %>" width="100px" height="70px"/></td>
+
+          <td>
+            <%= link_to 'Show', album %>
+            <%= link_to 'Edit', edit_album_path(album) %>
+            <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
+      </div>
+        </table> <!--songs table -->  
+    
        </div> <!--right_current_user_song_coloumn -->
             <div class="clearfix"> </div>
             <%= link_to 'Edit', edit_profile_path(@profile) %> |
