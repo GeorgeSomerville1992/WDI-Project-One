@@ -15,23 +15,23 @@ group :production do
 end
 
 
-group :development, :test do
+group :development do
   gem 'pry-rails'
   gem 'pry-debugger'
-  gem 'pry-stack_explorer'
-  gem 'annotate'
-  gem 'quiet_assets'
-  gem 'binding_of_caller'
-  gem 'meta_request'
-  gem 'rspec-rails'
+  gem 'pry-byebug'
+  gem 'better_errors'
+  
 end
+  # gem 'pry-stack_explorer'
+  # gem 'annotate'
+  # gem 'quiet_assets'
+  # gem 'binding_of_caller'
+  # gem 'meta_request'
+  # gem 'rspec-rails'
+
 
 gem 'carrierwave', "0.9.0"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 
-group :development do
-  gem 'better_errors' # BetterErrors.editor = :sublime if defined? BetterErrors  (initializer)
-                      # http://localhost:3000/__better_errors (reports last exception for debugging)
-end
 gem 'date_validator'
