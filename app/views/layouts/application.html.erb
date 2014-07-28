@@ -8,6 +8,7 @@
 <head>
   <title>WDIProjectOne</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <!--<link href="/assets/themes/'+ str +'.css?body=1" rel="stylesheet" type="text/css" media="all"> -->
   <% if current_user and current_user.profile.theme.present? %>
     <%= stylesheet_link_tag "themes/#{current_user.profile.theme}", :media => "all" %>
   <% end %>
@@ -57,6 +58,7 @@
 
           
         <%= yield %>
+       
         </div><!-- container div -->
       </div> <!-- end of  inner --> 
     </body>

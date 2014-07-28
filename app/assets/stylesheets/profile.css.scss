@@ -47,12 +47,17 @@ a:hover{
   width:100%;
   background-color:white;
   color:black ;
+
+    li{
+    text-align:center;
+    text-transform: capitalize;
+    padding:2px;
+
+  }
 }
 
 .top_login_nav li {
-  text-align:center;
-  text-transform: capitalize;
-  padding:2px;
+  
 
 }
 .left_profile_coloum {
@@ -73,7 +78,9 @@ a:hover{
 
 .songs_table {
   border:solid 2px white;
-  
+    th {
+      background-color:#8C8B8B; 
+    }
 
 }
 
@@ -83,7 +90,7 @@ a:hover{
 
 }
 .songs_table th{
-  background-color:#8C8B8B; 
+  
 
 }
 
@@ -99,19 +106,26 @@ a:hover{
 .bottomnav {
   height:30px;
   width:100%;
+    ul {
+      text-align:center;
+      margin-top: 5px;
+      li{
+        display:inline;
+        padding: 2px;
+        background-color:white;
+        border-radius: 20px; 
+        margin-left: 5px;
+        text-transform: capitalize;
+        
+      }
+    }
 }
 .bottomnav ul {
  
-  text-align:center;
-  margin-top: 5px;
+  
 }
 .bottomnav ul li {
-  display:inline;
-  padding: 2px;
-  background-color:white;
-  border-radius: 20px; 
-  margin-left: 5px;
-  text-transform: capitalize;
+  
 }
 .tableControlContainer ul li {
   display:inline;
