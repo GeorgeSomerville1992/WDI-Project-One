@@ -29,7 +29,7 @@ end
   # gem 'meta_request'
   # gem 'rspec-rails'
 
-
+gem 'haml-rails'
 gem 'carrierwave', "0.9.0"
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
