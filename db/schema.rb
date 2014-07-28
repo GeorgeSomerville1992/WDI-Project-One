@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20140522200654) do
     t.date     "date_logged"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.boolean  "flag"
     t.integer  "user_id"
+    t.boolean  "flag"
     t.integer  "song_id"
   end
 

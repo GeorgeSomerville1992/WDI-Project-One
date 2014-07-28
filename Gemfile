@@ -10,6 +10,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-rails'
 end 
+group :production do
+  gem 'rails_12factor'
+end
+
 
 group :development, :test do
   gem 'pry-rails'
