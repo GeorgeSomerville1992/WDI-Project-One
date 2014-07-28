@@ -54,6 +54,8 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     columnize (0.8.9)
+    date_validator (0.7.0)
+      activemodel (>= 3)
     debug_inspector (0.0.2)
     debugger (1.6.6)
       columnize (>= 0.3.1)
@@ -168,6 +170,7 @@ DEPENDENCIES
   cancan
   carrierwave (= 0.9.0)
   coffee-rails (~> 3.2.1)
+  date_validator
   jquery-rails
   meta_request
   pg

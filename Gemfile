@@ -30,3 +30,4 @@ group :development do
   gem 'better_errors' # BetterErrors.editor = :sublime if defined? BetterErrors  (initializer)
                       # http://localhost:3000/__better_errors (reports last exception for debugging)
 end
+gem 'date_validator'
