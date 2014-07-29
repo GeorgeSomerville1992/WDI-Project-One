@@ -19,7 +19,7 @@ html, body {
   margin:0 auto;
 }
 .banner_head{
-  background-image:url('header_four.fw.png');
+  background-image:url('/assets/header_four.fw.png');
   height:268px;
   width:1300px;
 }
@@ -72,7 +72,7 @@ a:hover, a:visited, a:link, a:active {
 .advertisment_image {
   width:200px;
   height:200px;
-  background-image: url("sample.fw.png");
+  background-image: url("/assets/sample.fw.png");
   margin-left:15px;
 
 }
