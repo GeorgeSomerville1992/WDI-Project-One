@@ -12,7 +12,7 @@ end
 module WDIProjectOne
   class Application < Rails::Application
 
-    config.assets.initialize_on_precompile = false
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -54,10 +54,10 @@ module WDIProjectOne
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
-    
+    config.assets.initialize_on_precompile = false
     # Enable the asset pipeline
     config.assets.enabled = true
-    config.assets.compile = true
+    # config.assets.compile = true
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
