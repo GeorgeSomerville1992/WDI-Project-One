@@ -22,7 +22,7 @@
           Background:
         <%= @profile.background %>
       </p>
-      <div action="/songs" method="GET" class="themeForm">
+      <!-- <div action="/songs" method="GET" class="themeForm">
         <label for="chooseTheme">Choose Theme</label>
         <select id="theme">
             <option>red</option>
@@ -31,19 +31,19 @@
             <option>purple</option>
             <option>Yellow</option>
         </select>
-      </div>
+      </div> -->
 
-      <button id="red"> change red </button> 
-
+      <!-- <button id="red"> change red </button> 
+ -->
 
   </div>
   <div class="right_current_user_song_coloumn">
-    <div class = "tableControlContainer">
+    <!-- <div class = "tableControlContainer">
       <ul>  
         <li class="tableControl"> View songs </li> <li><button id="showSongs" class="tableControl">showSongs</button></li>
         <li class="tableControl"> View albums </li> <li><button id="showAlbums" class="tableControl">showAlbums</button></li>
       </ul>
-    </div>
+    </div> -->
       <table class="songs_table" >
        <tr>
           <th>number</th>
@@ -84,10 +84,10 @@
       </div>
         </table> <!--songs table -->  
     
-       </div> <!--right_current_user_song_coloumn -->
+      </div> <!--right_current_user_song_coloumn -->
             <div class="clearfix"> </div>
-            <%= link_to 'Edit', edit_profile_path(@profile) %> |
-            <%= link_to 'Back', profiles_path %>
+            <%= link_to 'Edit', edit_profile_path(@profile), id: "profiles_table" %> |
+            <%= link_to 'Back', profiles_path, id: "profiles_table" %>
        </div> <!--"coloumns_container" -->
         
       </div> 
