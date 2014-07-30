@@ -94,12 +94,15 @@ text-align: center;
 
 
 
-.songs_table a:hover, a:visited, a:link, a:active {
-  text-decoration: none;
-  color: white;
-}
+// .songs_table a:hover, a:visited, a:link, a:active {
+//   text-decoration: none;
+//   color: white;
+// }
 
 .bottomnav a {
   color: black;
   text-transform: capitalize;
+}
+a{
+  color:black;
 }
